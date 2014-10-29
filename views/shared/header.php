@@ -17,8 +17,7 @@ session_start();
 
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : ""; 
 
-
-//echo $user->getFirstName();
+// echo $user->getFirstName();
 //echo $_SESSION['user']->getFirstName();
 ?>
 <html>
@@ -126,8 +125,17 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : "";
               <a href="/Tarboz/views2/Home/search_result.php">Result</a>
               <a href="/Tarboz/views2/Entry/Index.php">Entry Index</a>
               <a href="/Tarboz/Views/Entry/Create.php">Entry Create</a>
-              <a href="/Tarboz/Views/User/Index.php">User Index</a>     
+              <a href="/Tarboz/Views/User/Index.php">User Index</a> 
+
+              <a class="login" href="/Tarboz/Views/User/Index.php">
+                <?php
+                 if (isset($_SESSION['user'])) {
+                    echo "User Index test";
+                  } ?></a>
+
+
           </nav>
+
           <div class="table-cell" style="text-align: right;"><a href="#" id="call_it" class="login_button">Login</a> </div><div id="user_name"></div>
 
           <div style="width:100px;" title="Login Window" id="login">
